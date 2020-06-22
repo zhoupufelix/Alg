@@ -26,11 +26,15 @@ func removeElement(nums []int,val int)int{
 //给定数组 nums = [1,1,2],
 //函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。
 //你不需要考虑数组中超出新长度后面的元素。
-//思路: 因为是排好序的，
+//思路: 因为是排好序的，只要判断i 和
 
-func removeSortElement(nums []int,val int)int{
-	for i:=0;i<len(nums);{
-
+func removeSortElement(nums []int)int{
+	for i:=0;i<len(nums)-1;{
+		if nums[i] == nums[i+1]{
+			nums = append(nums[:i],nums[i+1:]...)
+		}else{
+			i++
+		}
 	}
 	return len(nums)
 }
@@ -38,6 +42,6 @@ func removeSortElement(nums []int,val int)int{
 
 
 func main(){
-	nums := []int{3,2,2,3}
-	fmt.Println(removeElement(nums,3))
+	sortNums := []int{1,2,3,4,5,5,5,6,6,6}
+	fmt.Println(removeSortElement(sortNums))
 }
