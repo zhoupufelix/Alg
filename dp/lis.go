@@ -16,7 +16,7 @@ func lengthOfLIS(nums []int)int{
 		dp[k] = 1
 	}
 
-
+	//最长子序列 包括自己 或 不包括子集
 	for i:=0;i<n;i++{
 		for j:=0;j<i;j++{
 			if  nums[i] > nums[j]{
