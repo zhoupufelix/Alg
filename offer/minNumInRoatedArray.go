@@ -17,11 +17,11 @@ func Solution(nums []int)int{
 	for nums[p] >= nums[q]{
 		//如果距离只相差1 因为是非减序列 p就是最小的元素
 		if q-p == 1 {
-			mid = p
+			mid = q
 			break
 		}
 		
-		mid = p+(q-p)/2
+		mid = (p+q)/2
 		if nums[p] == nums[q] && nums[mid] == nums[p] {
 			mid = getMinIndex(nums,p,q)
 			break
